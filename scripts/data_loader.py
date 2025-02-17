@@ -27,9 +27,6 @@ class RecommendationDataLoader:
         print(f"Found {len(users_df)} users")
         print(f"Found {len(books_df)} books and {len(songs_df)} songs")
         
-        # Rest of the code remains the same...
-        # [Previous implementation of data processing]
-        
         # Combine items and interactions
         items_df = pd.concat([books_df, songs_df], ignore_index=True)
         interactions_df = pd.concat([book_interactions_df, song_interactions_df], ignore_index=True)
