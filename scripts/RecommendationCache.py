@@ -1,5 +1,4 @@
 from typing import List, Dict
-import json
 
 class RecommendationCache:
     """Cache for storing and retrieving recommendations"""

@@ -5,9 +5,12 @@ import torch.nn as nn
 import torch.nn.functional as F
 from typing import Tuple, Dict, List, Set
 from functools import lru_cache
-from caching import RecommendationCache
-from metrics import DiversityMetrics, EvaluationMetrics
-from models import GraphEncoder, Generator, Discriminator
+from DiversityMetrics import DiversityMetrics
+from EvaluationMetrics import EvaluationMetrics
+from GraphEncoder import GraphEncoder
+from Generator import Generator
+from Discriminator import Discriminator
+
 
 class GraphGANRecommender:
     def __init__(

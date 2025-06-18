@@ -2,7 +2,6 @@ import os
 import pandas as pd
 import torch
 from torch_geometric.data import Data
-import numpy as np
 from typing import Tuple, Dict
 
 class RecommendationDataLoader:
@@ -103,20 +102,3 @@ def prepare_graph_gan_data(data_dir: str = 'recommendation_data') -> Tuple[Data,
     loader = RecommendationDataLoader(data_dir)
     return loader.load_data()
 
-# Example usage
-if __name__ == "__main__":
-    try:
-        # Load and prepare data
-        graph_data, mappings = prepare_graph_gan_data()
-        
-        print("\nData Statistics:")
-        print(f"Number of users: {mappings['num_users']}")
-        print(f"Number of items: {mappings['num_items']}")
-        print(f"Number of interactions: {graph_data.edge_index.shape[1] // 2}")  # Divide by 2 because bidirectional
-        print(f"Feature dimensions: {graph_data.x.shape[1]}")
-        
-    except FileNotFoundError as e:
-        print(f"Error: Could not find data files: {e}")
-        print("Please check that the data directory is in the correct location relative to this script.")
-    except Exception as e:
-        print(f"Error occurred: {e}")
